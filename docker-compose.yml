@@ -4,8 +4,6 @@ services:
   poc-db:
     container_name: poc-db
     image: mongo
-    ports:
-      - 27017:27017
     volumes:
       - mongodata:/data/db
 
