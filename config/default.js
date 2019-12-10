@@ -31,7 +31,7 @@ module.exports = {
         value: 'fr',
       },
     ],
-    localesDir: 'locales'
+    localesDir: 'locales',
   },
 
   express: {
