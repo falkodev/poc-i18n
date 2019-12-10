@@ -1,0 +1,54 @@
+@import "utils/reset.less";
+
+// Delete the boilerplate CSS below when you are ready to dive in and customize your sites:
+body { background-color: @apos-light; }
+
+:disabled {
+  color: gray;
+}
+
+.content {
+  font-family: 'Karla', sans-serif;
+  margin: 50px auto 0;
+  padding: 20px;
+  max-width: 500px;
+  background-color: @apos-primary;
+  color: @apos-white;
+  font-size: 32px;
+}
+
+.main-content {
+  margin: 200px auto 0;
+
+  .login-link {
+    font-size: 14px;
+    background-color: @apos-light;
+    padding: 10px 40px;
+    margin-left: auto;
+    text-decoration: none;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: 0 0 7px 2px @apos-light;
+    }
+  }
+
+  .flex {
+    display: flex;
+  }
+
+  // Basic rich-text editor styles:
+  h3 {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+
+  h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  strong { font-weight: bold; }
+  em { font-style: italic; }
+}

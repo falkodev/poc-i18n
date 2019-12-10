@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  poc-db:
+    container_name: poc-db
+    image: mongo
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodata:/data/db
+
+  poc-backend:
+    container_name: poc-backend
+    build: .
+    volumes:
+      - ./app.js:/app/app.js
+      - ./config:/app/config
+      - ./lib:/app/lib
+      - ./locales:/app/locales
+      - ./public:/app/public
+    ports:
+      - 8080:8080
+    depends_on:
+      - poc-db
+    environment:
+      MONGODB: mongodb://poc-db:27017/poc-i18n
+      NODE_ENV: ${NODE_ENV:-production}
+
+volumes:
+  mongodata:
