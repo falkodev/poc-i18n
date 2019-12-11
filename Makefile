@@ -22,10 +22,10 @@ users:
 	docker-compose up -d && docker-compose exec poc-backend node app fixtures:users && make stop
 
 logs-backend:
-	docker logs poc-backend -f
+	docker logs --tail 200 poc-backend -f
 
 logs-backend-2:
-	docker logs poc-backend-2 -f
+	docker logs --tail 200 poc-backend-2 -f
 
 logs:
 	make logs-backend & make logs-backend-2
