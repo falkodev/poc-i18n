@@ -8,7 +8,7 @@
 // create a ./local.js file with your own overrides. Note, that the local.js
 // file does not needs to contains all the configuration keys: just the overrides.
 const name = 'poc-i18n'
-const port = 8080
+const port = process.env.PORT || 8080
 
 module.exports = {
   shortName: name,
@@ -20,15 +20,43 @@ module.exports = {
   },
 
   languages: {
-    default: 'en',
+    default: 'en-US',
     values: [
       {
-        label: 'English',
-        value: 'en',
+        label: 'German',
+        value: 'de-DE',
       },
       {
-        label: 'Français',
-        value: 'fr',
+        label: 'English',
+        value: 'en-US',
+      },
+      {
+        label: 'Spanish',
+        value:  'es-ES',
+      },
+      {
+        label: 'French',
+        value: 'fr-FR',
+      },
+      {
+        label: 'Japanese',
+        value: 'jp-JP',
+      },
+      {
+        label: 'Portuguese',
+        value: 'pt-PT',
+      },
+      {
+        label: 'Russian',
+        value: 'ru-RU',
+      },
+      {
+        label: 'Common Chinese',
+        value: 'zh-CN',
+      },
+      {
+        label: 'Taiwan Chinese',
+        value: 'zh-TW',
       },
     ],
     localesDir: 'locales',
