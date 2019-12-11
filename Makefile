@@ -21,5 +21,11 @@ prod:
 users:
 	docker-compose up -d && docker-compose exec poc-backend node app fixtures:users && make stop
 
-logs:
+logs-backend:
 	docker logs poc-backend -f
+
+logs-backend-2:
+	docker logs poc-backend-2 -f
+
+logs:
+	make logs-backend & make logs-backend-2

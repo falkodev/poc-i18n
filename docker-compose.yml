@@ -4,6 +4,8 @@ services:
   poc-db:
     container_name: poc-db
     image: mongo
+    ports:
+      - 27017:27017
     volumes:
       - mongodata:/data/db
 
@@ -14,8 +16,6 @@ services:
       - ./app.js:/app/app.js
       - ./config:/app/config
       - ./lib:/app/lib
-      - ./locales:/app/locales
-      - ./public:/app/public
     ports:
       - 8080:8080
     depends_on:
@@ -23,6 +23,23 @@ services:
     environment:
       MONGODB: mongodb://poc-db:27017/poc-i18n
       NODE_ENV: ${NODE_ENV:-production}
+      PORT: 8080
+
+  poc-backend-2:
+    container_name: poc-backend-2
+    build: .
+    volumes:
+      - ./app.js:/app/app.js
+      - ./config:/app/config
+      - ./lib:/app/lib
+    ports:
+      - 8081:8081
+    depends_on:
+      - poc-db
+    environment:
+      MONGODB: mongodb://poc-db:27017/poc-i18n
+      NODE_ENV: ${NODE_ENV:-production}
+      PORT: 8081
 
 volumes:
   mongodata:

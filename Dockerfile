@@ -20,5 +20,4 @@ RUN chmod +x ./start.sh
 VOLUME /app/data
 VOLUME /app/public
 
-# EXPOSE 1337
 CMD ["./start.sh"]
