@@ -18,6 +18,7 @@ const apos = require('apostrophe')({
       defaultLocale: config.get('languages.default'),
       localesDir: config.get('languages.localesDir'),
     },
+    'apostrophe-pieces-export': {},
     'apostrophe-users': {
       groups: [
         {
@@ -31,7 +32,7 @@ const apos = require('apostrophe')({
       ],
     },
     fixtures: {},
-    translation: {},
+    translation: { export: true },
   },
 })
 

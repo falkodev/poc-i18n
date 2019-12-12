@@ -32,7 +32,7 @@ module.exports = {
       },
       {
         label: 'Spanish',
-        value:  'es-ES',
+        value: 'es-ES',
       },
       {
         label: 'French',
